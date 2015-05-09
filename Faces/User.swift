@@ -5,6 +5,12 @@ class User: Model {
     var userId = ""
     var name = ""
     var email = ""
+    var avatarURL = ""
+    var avatar:NSURL? {
+        get {
+            return NSURL(string: avatarURL)
+        }
+    }
     
     class func map(manager:RKObjectManager) {
         let responseDescriptor = RKResponseDescriptor(mapping: self.mapping(), method: RKRequestMethod.GET, pathPattern: "users/me/", keyPath: nil, statusCodes: RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful))
@@ -21,6 +27,7 @@ class User: Model {
             "access_token": "accessToken",
             "name": "name",
             "email": "email",
+            "avatar": "avatarURL",
             ])
         return mapping
     }

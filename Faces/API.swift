@@ -33,8 +33,8 @@ class API:NSObject {
         RestKitObjC.initLogging()
         RestKitObjC.setupTransformers()
         
-        Location.map(manager)
         User.map(manager)
+        Product.map(manager)
         
         return manager
         }()
@@ -90,7 +90,7 @@ class API:NSObject {
     }
     
     func handleError(error:NSError, operation:AFHTTPRequestOperation? = nil) {
-        if operation?.response.statusCode == 401 {
+        if operation?.response?.statusCode == 401 {
             self.delegate?.apiRespondedWithError(.Unauthenticated)
         }
     }

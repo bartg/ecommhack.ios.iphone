@@ -32,6 +32,10 @@ class LoginViewController: FacesViewController, FBSDKLoginButtonDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
     func loginWithFacebook() {
         let token = FBSDKAccessToken.currentAccessToken().tokenString
         SVProgressHUD.showWithMaskType(.Black)
