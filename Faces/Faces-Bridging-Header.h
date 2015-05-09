@@ -16,4 +16,5 @@
 #import <MXGoogleAnalytics.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "PayPalMobile.h"
 #endif

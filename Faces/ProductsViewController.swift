@@ -2,7 +2,7 @@ import UIKit
 import FacesUI
 
 
-class ProductsViewController: FacesViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIActionSheetDelegate {
+class ProductsViewController: FacesViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIActionSheetDelegate, PayPalPaymentDelegate {
     @IBOutlet weak var userHelloLabel: HighlightedLabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var userImageView: UIImageView!
@@ -18,6 +18,7 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
         self.collectionView.delegate = self
         
         product.name = "iPhone 4"
+        product.price = NSDecimalNumber(string: "21")
         product.desc = "asdsda sad asdasd  sdad"
         product.imagesURL = ["http://faces.hern.as/static/images/david_hasselhoff_3.jpg", "http://www.justvape247.com/ekmps/shops/justvape247/images/-NEW-IN-RED-APPLE-NATURAL-FW--16946-p.jpg"]
         
@@ -43,6 +44,8 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        PayPalMobile.preconnectWithEnvironment(PayPalEnvironmentNoNetwork)
         
     }
     
@@ -87,10 +90,43 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1 {
-            // PayPal
+            self.payWithPayPal(self.product.price, name: self.product.name)
         }
     }
     
     // MARK: PayPal
+    
+    lazy var paypalConfiguration:PayPalConfiguration = {
+        let conf = PayPalConfiguration()
+        conf.payPalShippingAddressOption = PayPalShippingAddressOption.PayPal
+        conf.acceptCreditCards = false
+        return conf
+    }()
+    
+    func payWithPayPal(amount:NSDecimalNumber, name:String) {
+        let payment = PayPalPayment()
+        payment.amount = amount
+        payment.currencyCode = "EUR"
+        payment.shortDescription = name
+        payment.intent = PayPalPaymentIntent.Order
+        if (!payment.processable) {
+            // If, for example, the amount was negative or the shortDescription was empty, then
+            // this payment would not be processable. You would want to handle that here.
+        }
+        
+        let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.paypalConfiguration, delegate: self)
+        self.presentViewController(paymentViewController, animated: true, completion: nil)
+    }
+    
+    func payPalPaymentDidCancel(paymentViewController: PayPalPaymentViewController!) {
+        
+        paymentViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func payPalPaymentViewController(paymentViewController: PayPalPaymentViewController!, didCompletePayment completedPayment: PayPalPayment!) {
+        DLOG("\(completedPayment)")
+        
+        paymentViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }

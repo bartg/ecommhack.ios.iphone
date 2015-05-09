@@ -19,12 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, APIErrorDelegate {
         }
         self.styleAppearance()
         self.setUpSDK(launchOptions)
+        self.setUpPayPal()
         
         // Set Up system wide used API
         self.api.delegate = self
         ((self.window?.rootViewController as! UINavigationController).viewControllers.last! as! FacesViewController).api = self.api
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
+    }
+    
+    func setUpPayPal() {
+        PayPalMobile.initializeWithClientIdsForEnvironments(["PayPalEnvironmentSandbox":"AXI8ipekXnZ9C6Ph_2W5ivink3MRMu0WTroKIJPy8GlHs63ZYxfhUpqQJ59U3rMEXgfNjbWy2JyMj5eF"])
     }
     
     func styleAppearance() {

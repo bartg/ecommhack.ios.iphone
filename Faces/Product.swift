@@ -1,6 +1,7 @@
 class Product: Model {
     dynamic var name = ""
     dynamic var desc = ""
+    dynamic var price = NSDecimalNumber(string: "0")
     var imagesURL:[String] = [String]() {
         didSet {
             var images = [NSURL]()
