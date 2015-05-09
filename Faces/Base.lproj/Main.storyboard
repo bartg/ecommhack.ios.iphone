@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jeb-rb-vLE">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="LoginViewController" customModule="Faces" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="BackgroundView" customModule="FacesUI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please login to Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eev-5D-fy3" customClass="NormalLabel" customModule="FacesUI">
+                                <rect key="frame" x="75" y="229" width="195" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13725490196078433" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="eev-5D-fy3" secondAttribute="centerY" id="AXk-Wb-9xi"/>
+                            <constraint firstAttribute="centerX" secondItem="eev-5D-fy3" secondAttribute="centerX" id="VUf-9w-tcx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wjc-FS-WSM"/>
+                    <connections>
+                        <outlet property="loginLabel" destination="eev-5D-fy3" id="tZK-0Y-lpQ"/>
+                        <segue destination="zwP-gh-kcz" kind="show" identifier="login" id="b9y-l6-lzu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="269" y="278"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="uwc-Y4-6YR">
+            <objects>
+                <viewController id="zwP-gh-kcz" customClass="MenuViewController" customModule="Faces" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pxy-dQ-yjc"/>
+                        <viewControllerLayoutGuide type="bottom" id="PbP-MI-TQ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L4b-lN-Y8j" customClass="BackgroundView" customModule="FacesUI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVt-bg-eME" customClass="NormalButton" customModule="FacesUI">
+                                <rect key="frame" x="138" y="443" width="45" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logOutTapped:" destination="zwP-gh-kcz" eventType="touchUpInside" id="j3u-NU-H1Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="tVt-bg-eME" firstAttribute="leading" secondItem="L4b-lN-Y8j" secondAttribute="leadingMargin" constant="8" id="C97-Tf-aNs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tVt-bg-eME" secondAttribute="trailing" id="Ecg-0L-i3D"/>
+                            <constraint firstItem="PbP-MI-TQ3" firstAttribute="top" secondItem="tVt-bg-eME" secondAttribute="bottom" constant="8" id="HUi-Kq-qkd"/>
+                            <constraint firstItem="tVt-bg-eME" firstAttribute="leading" secondItem="L4b-lN-Y8j" secondAttribute="leadingMargin" id="NiO-ZD-D02"/>
+                            <constraint firstAttribute="centerX" secondItem="tVt-bg-eME" secondAttribute="centerX" id="ZPQ-S8-D9r"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="C97-Tf-aNs"/>
+                                <exclude reference="Ecg-0L-i3D"/>
+                                <exclude reference="NiO-ZD-D02"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="fc1-OI-kh0" appends="YES" id="Muk-96-aRd"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szO-NW-BZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fc1-OI-kh0">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="zwP-gh-kcz" id="MMa-h1-tMV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="641" y="273"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Eh2-GV-zhg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jeb-rb-vLE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JC6-Qj-dMl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="1ZI-IQ-Rxo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcR-VC-cu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-169" y="278"/>
+        </scene>
+    </scenes>
+</document>
