@@ -1,5 +1,22 @@
 PODS:
   - AFNetworking (1.3.4)
+  - Bolts (1.1.5):
+    - Bolts/AppLinks (= 1.1.5)
+    - Bolts/Tasks (= 1.1.5)
+  - Bolts/AppLinks (1.1.5):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.1.5)
+  - FBSDKCoreKit (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.1.0)
+    - FBSDKCoreKit/no-arc (= 4.1.0)
+  - FBSDKCoreKit/arc (4.1.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.1.0):
+    - FBSDKCoreKit
   - FontAwesomeKit (2.1.8):
     - FontAwesomeKit/Core (= 2.1.8)
     - FontAwesomeKit/FontAwesome (= 2.1.8)
@@ -59,6 +76,8 @@ PODS:
   - YLProgressBar (3.5.2)
 
 DEPENDENCIES:
+  - FBSDKCoreKit
+  - FBSDKLoginKit
   - FontAwesomeKit (~> 2.1.0)
   - FXKeychain
   - MXGoogleAnalytics
@@ -70,6 +89,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  Bolts: aac24961496d504aa56fc267cde95162a71bac39
+  FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
+  FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
   FontAwesomeKit: 64759fb28b5d2e74a1bd81553d7c11ca10e32179
   FXKeychain: 1a711bddc04a2bd69850dcfe297b8a43027a9980
   GoogleAnalytics-iOS-SDK: 4f98a376c1d61e6ac4ca47951655820314856eef

@@ -75,27 +75,18 @@ class API:NSObject {
             failure()
         }
     }
-    
-    func validateSession(success:(session:SPTSession)->(), failure:(error:NSError)->()) {
-        let session:SPTSession = self.user.spotifySession()
-        if !session.isValid() {
-            self.renewSession(success, failure: failure)
-        } else {
-            success(session: session)
-        }
-    }
-    
-    func renewSession(success:(session:SPTSession)->(), failure:(error:NSError)->()) {
-        let session:SPTSession = self.user.spotifySession()
-        SPTAuth.defaultInstance().renewSession(session, callback: { (error, session) -> Void in
-            if error != nil {
-                DLOG("Got error when renewing session: \(error)")
-                self.handleError(error)
-                failure(error: error)
-                return;
+    func authorizeWithFacebook(token:String, success:()->(), failure:()->()) {
+        self.manager.postObject(nil, path: "auth/", parameters: ["type": "facebook", "access_token":token], success: { [weak self] (operation, result) -> Void in
+            if let user = result.firstObject as? User {
+                self?.user = user
+                self?.token = user.accessToken
+                user.accessToken = ""
+                success()
             }
-            success(session: session)
-        })
+        }) { (operation, error) -> Void in
+            self.handleError(error, operation: operation.HTTPRequestOperation)
+            failure()
+        }
     }
     
     func handleError(error:NSError, operation:AFHTTPRequestOperation? = nil) {
@@ -107,6 +98,6 @@ class API:NSObject {
     func logOut() {
         self.token = nil
         self.user = nil
-        Spotify.sharedInstance.spotifySession = nil
+        FBSDKAccessToken.setCurrentAccessToken(nil)
     }
 }

@@ -21,11 +21,9 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>HelloWorldMySpin</string>
+				<string>fb826201467468902</string>
 			</array>
 		</dict>
 		<dict>
@@ -39,6 +37,10 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>6</string>
+	<key>FacebookAppID</key>
+	<string>826201467468902</string>
+	<key>FacebookDisplayName</key>
+	<string>eCommerceHack</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>

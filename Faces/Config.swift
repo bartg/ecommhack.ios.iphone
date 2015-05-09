@@ -1,8 +1,5 @@
-let API_URL = "https://api.sharklist.it/"
-let SPOTIFY_CLIENT_ID = "a7551c3c61e7456e93aae7e54cefa238"
-let SPOTIFY_CALLBACK_URL = "sharklist://spotify-callback"
-let SPOTIFY_TOKEN_SWAP_URL = "\(API_URL)auth/swap"
-let SPOTIFY_TOKEN_REFRESH_URL = "\(API_URL)auth/refresh"
+//let API_URL = "http://localhost:8082/"
+let API_URL = "http://faces.hern.as/"
 
 let hostPollingLatency:NSTimeInterval = 1
 let influencerPollingLatency:NSTimeInterval = 1

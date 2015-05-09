@@ -17,22 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please login to Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eev-5D-fy3" customClass="NormalLabel" customModule="FacesUI">
-                                <rect key="frame" x="75" y="229" width="195" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUH-as-np6" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="73" y="385" width="175" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="6yf-Ql-p4v"/>
+                                    <constraint firstAttribute="height" constant="35" id="Svb-Iv-92q"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13725490196078433" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="eev-5D-fy3" secondAttribute="centerY" id="AXk-Wb-9xi"/>
-                            <constraint firstAttribute="centerX" secondItem="eev-5D-fy3" secondAttribute="centerX" id="VUf-9w-tcx"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fUH-as-np6" secondAttribute="bottom" constant="60" id="XLr-Y5-9AR"/>
+                            <constraint firstAttribute="centerX" secondItem="fUH-as-np6" secondAttribute="centerX" id="c5O-AM-S2g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wjc-FS-WSM"/>
                     <connections>
-                        <outlet property="loginLabel" destination="eev-5D-fy3" id="tZK-0Y-lpQ"/>
+                        <outlet property="loginButton" destination="fUH-as-np6" id="Jbo-Si-a2g"/>
                         <segue destination="zwP-gh-kcz" kind="show" identifier="login" id="b9y-l6-lzu"/>
                     </connections>
                 </viewController>
