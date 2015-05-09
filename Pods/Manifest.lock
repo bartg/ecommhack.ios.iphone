@@ -40,6 +40,7 @@ PODS:
     - RKValueTransformers (~> 1.1.0)
   - MXGoogleAnalytics (1.0.1):
     - GoogleAnalytics-iOS-SDK (~> 3.10)
+  - PayPal-iOS-SDK (2.10.2)
   - ReactiveCocoa (2.4.7):
     - ReactiveCocoa/UI (= 2.4.7)
   - ReactiveCocoa/Core (2.4.7):
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - FontAwesomeKit (~> 2.1.0)
   - FXKeychain
   - MXGoogleAnalytics
+  - PayPal-iOS-SDK
   - ReactiveCocoa
   - RestKit (HEAD)
   - SDWebImage
@@ -97,6 +99,7 @@ SPEC CHECKSUMS:
   GoogleAnalytics-iOS-SDK: 4f98a376c1d61e6ac4ca47951655820314856eef
   ISO8601DateFormatterValueTransformer: 3ac3a721381697cab4e792d8049ce2f2e9ad3036
   MXGoogleAnalytics: 9029d27e6e1f0a4edc2b9e97d00566e634fa3a80
+  PayPal-iOS-SDK: 2e7c953fda7bbd05242c748e58a2a2a96a0c18a3
   ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
   RestKit: 1987b5efef289c6b27bd980714d6ca48d3871b78
   RKValueTransformers: 66ac5e4f077fdbe3496e792d89eeff4c3eb67701

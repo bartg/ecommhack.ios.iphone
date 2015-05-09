@@ -32,8 +32,7 @@
 		9408DE2D1527764F4209C6DC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE63B9F8B276D61AF38C1D4 /* libPods.a */; };
 		AC0E5A061AFE786A00EB98FE /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E5A051AFE786A00EB98FE /* ProductsViewController.swift */; };
 		AC0E5A0A1AFE7E0800EB98FE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E5A091AFE7E0800EB98FE /* Product.swift */; };
-		AC0E5A0C1AFE7F9000EB98FE /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E5A0B1AFE7F9000EB98FE /* ProductCell.swift */; };
-		AC0E5A0E1AFE860300EB98FE /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E5A0D1AFE860300EB98FE /* ProductStore.swift */; };
+		AC0E5A101AFEB0E700EB98FE /* ProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0E5A0F1AFEB0E700EB98FE /* ProductImageCell.swift */; };
 		AC3192F31AE78A4C00F24D4B /* FacesUI.h in Headers */ = {isa = PBXBuildFile; fileRef = AC3192F21AE78A4C00F24D4B /* FacesUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC3192F91AE78A4C00F24D4B /* FacesUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3192EE1AE78A4C00F24D4B /* FacesUI.framework */; };
 		AC3193021AE78A4C00F24D4B /* FacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3193011AE78A4C00F24D4B /* FacesUITests.swift */; };
@@ -137,8 +136,7 @@
 		30DA54F01ABDADD900356391 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		AC0E5A051AFE786A00EB98FE /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		AC0E5A091AFE7E0800EB98FE /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		AC0E5A0B1AFE7F9000EB98FE /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		AC0E5A0D1AFE860300EB98FE /* ProductStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
+		AC0E5A0F1AFEB0E700EB98FE /* ProductImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImageCell.swift; sourceTree = "<group>"; };
 		AC3192EE1AE78A4C00F24D4B /* FacesUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacesUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3192F11AE78A4C00F24D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = FacesUI/Info.plist; sourceTree = "<group>"; };
 		AC3192F21AE78A4C00F24D4B /* FacesUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FacesUI.h; path = FacesUI/FacesUI.h; sourceTree = "<group>"; };
@@ -328,9 +326,8 @@
 			isa = PBXGroup;
 			children = (
 				AC0E5A051AFE786A00EB98FE /* ProductsViewController.swift */,
-				AC0E5A0B1AFE7F9000EB98FE /* ProductCell.swift */,
+				AC0E5A0F1AFEB0E700EB98FE /* ProductImageCell.swift */,
 				AC0E5A091AFE7E0800EB98FE /* Product.swift */,
-				AC0E5A0D1AFE860300EB98FE /* ProductStore.swift */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -655,6 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC575BE51ADDB68A00FB3ECF /* Model.swift in Sources */,
+				AC0E5A101AFEB0E700EB98FE /* ProductImageCell.swift in Sources */,
 				AC0E5A061AFE786A00EB98FE /* ProductsViewController.swift in Sources */,
 				AC36DF581ABE016F0057E81F /* RestKitObjC.m in Sources */,
 				AC7132C81AC9F9A800360845 /* Config.swift in Sources */,
@@ -663,8 +661,6 @@
 				AC9066EA1ADDB1250077A6C9 /* FacesViewController.swift in Sources */,
 				30396E721ABE1A56003D2D20 /* User.swift in Sources */,
 				30459DFE1ABE042500B439BD /* RAC.swift in Sources */,
-				AC0E5A0C1AFE7F9000EB98FE /* ProductCell.swift in Sources */,
-				AC0E5A0E1AFE860300EB98FE /* ProductStore.swift in Sources */,
 				AC36DF511ABE00730057E81F /* API.swift in Sources */,
 				AC0E5A0A1AFE7E0800EB98FE /* Product.swift in Sources */,
 			);

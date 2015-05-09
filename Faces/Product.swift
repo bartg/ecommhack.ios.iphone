@@ -1,10 +1,17 @@
 class Product: Model {
-    var name = ""
-    var desc = ""
-    var imageURL = ""
-    var image:NSURL? {
-        return NSURL(string: self.imageURL)
+    dynamic var name = ""
+    dynamic var desc = ""
+    var imagesURL:[String] = [String]() {
+        didSet {
+            var images = [NSURL]()
+            for img in imagesURL {
+                images.append(NSURL(string: img)!)
+            }
+            self.images = images
+        }
     }
+    
+    dynamic var images = [NSURL]()
     
     class func map(manager:RKObjectManager) {
         let responseDescriptor = RKResponseDescriptor(mapping: self.mapping(), method: RKRequestMethod.GET, pathPattern: "products/", keyPath: nil, statusCodes: RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful))
@@ -16,7 +23,7 @@ class Product: Model {
         mapping.addAttributeMappingsFromDictionary([
             "name": "name",
             "desc": "desc",
-            "image": "imageURL",
+            "images": "imagesURL",
             ])
         return mapping
     }

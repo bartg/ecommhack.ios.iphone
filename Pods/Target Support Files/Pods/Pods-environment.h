@@ -120,6 +120,12 @@
 #define COCOAPODS_VERSION_MINOR_MXGoogleAnalytics 0
 #define COCOAPODS_VERSION_PATCH_MXGoogleAnalytics 1
 
+// PayPal-iOS-SDK
+#define COCOAPODS_POD_AVAILABLE_PayPal_iOS_SDK
+#define COCOAPODS_VERSION_MAJOR_PayPal_iOS_SDK 2
+#define COCOAPODS_VERSION_MINOR_PayPal_iOS_SDK 10
+#define COCOAPODS_VERSION_PATCH_PayPal_iOS_SDK 2
+
 // RKValueTransformers
 #define COCOAPODS_POD_AVAILABLE_RKValueTransformers
 #define COCOAPODS_VERSION_MAJOR_RKValueTransformers 1
