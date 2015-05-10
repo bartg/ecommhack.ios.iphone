@@ -2,21 +2,12 @@ class Product: Model {
     dynamic var name = ""
     dynamic var desc = ""
     dynamic var price = NSDecimalNumber(string: "0")
-    var imagesURL:[String] = [String]() {
-        didSet {
-            var images = [NSURL]()
-            for img in imagesURL {
-                images.append(NSURL(string: img)!)
-            }
-            self.images = images
-        }
-    }
-    
-    dynamic var images = [NSURL]()
+    dynamic var images = [Image]()
     
     class func map(manager:RKObjectManager) {
-        let responseDescriptor = RKResponseDescriptor(mapping: self.mapping(), method: RKRequestMethod.GET, pathPattern: "products/", keyPath: nil, statusCodes: RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful))
+        let responseDescriptor = RKResponseDescriptor(mapping: self.mapping(), method: RKRequestMethod.GET, pathPattern: "products/recommendation/", keyPath: nil, statusCodes: RKStatusCodeIndexSetForClass(RKStatusCodeClass.Successful))
         manager.addResponseDescriptor(responseDescriptor)
+        
     }
     
     class func mapping() -> RKObjectMapping {
@@ -26,6 +17,7 @@ class Product: Model {
             "desc": "desc",
             "images": "imagesURL",
             ])
+        mapping.addPropertyMapping(RKRelationshipMapping(fromKeyPath: "images", toKeyPath: "images", withMapping: Image.mapping()))
         return mapping
     }
 }

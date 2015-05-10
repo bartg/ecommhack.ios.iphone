@@ -10,29 +10,29 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
     @IBOutlet weak var topDescLabel: NormalLabel!
     @IBOutlet weak var descLabel: NormalLabel!
     @IBOutlet weak var nameLabel: NormalLabel!
-    lazy var product = Product()
+    dynamic var product:Product?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ga_title = "Products"
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        product.name = "iPhone 4"
-        product.price = NSDecimalNumber(string: "21")
-        product.desc = "asdsda sad asdasd  sdad"
-        product.imagesURL = ["http://faces.hern.as/static/images/david_hasselhoff_3.jpg", "http://www.justvape247.com/ekmps/shops/justvape247/images/-NEW-IN-RED-APPLE-NATURAL-FW--16946-p.jpg"]
+        self.api.getProduct({ (product) -> () in
+            self.product = product
+        }, failure: { () -> () in
+            
+        })
         
         self.userHelloLabel.text = "Hi \(self.api.user.name)!"
         if let image = self.api.user.avatar {
             self.userImageView.sd_setImageWithURL(image)
         }
         
-        RACObserve(self.product, "name").subscribeNextAs { [weak self](name:String) -> () in
-            self?.nameLabel.text = name
-        }
-        
-        RACObserve(self.product, "desc").subscribeNextAs { [weak self](desc:String) -> () in
-            self?.descLabel.text = desc
+        RACObserve(self, "product").subscribeNextAs { [weak self](desc:String) -> () in
+            if let product = self?.product {
+                self?.descLabel.text = product.description
+                self?.nameLabel.text = product.name
+            }
         }
         
         RACObserve(self.product, "images").subscribeNextAs { [weak self](desc:String) -> () in
@@ -58,14 +58,19 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as! UICollectionViewCell
         
         if let cell = cell as? ProductImageCell {
-            cell.configure(product.images[indexPath.row])
+            if let product = self.product {
+                cell.configure(product.images[indexPath.row])
+            }
         }
         
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.product.images.count
+        if let product = self.product {
+            return product.images.count
+        }
+        return 0
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -90,7 +95,7 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1 {
-            self.payWithPayPal(self.product.price, name: self.product.name)
+            self.payWithPayPal(self.product!.price, name: self.product!.name)
         }
     }
     
