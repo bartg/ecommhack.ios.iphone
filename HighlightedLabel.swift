@@ -10,8 +10,7 @@
     }
     
     final func styleHightlighted() {
-        self.font = UI.fontSized(UI.fontSizeSmall)
-        self.textColor = StyleKit.notification
-        self.backgroundColor = StyleKit.dark1
+        self.font = UI.fontSized(UI.fontSize, bold: true)
+        self.textColor = UIColor.whiteColor()
     }
 }

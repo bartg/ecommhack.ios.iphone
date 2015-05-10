@@ -37,9 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, APIErrorDelegate {
         
         // Navigation Bar
         let textAttributes = NSMutableDictionary(capacity:1)
-        textAttributes.setObject(StyleKit.gray1, forKey: NSForegroundColorAttributeName)
+        textAttributes.setObject(UIColor.whiteColor(), forKey: NSForegroundColorAttributeName)
+        textAttributes.setObject(UI.fontSized(UI.fontSize, bold: true), forKey: NSFontAttributeName)
         UINavigationBar.appearance().titleTextAttributes = textAttributes as [NSObject : AnyObject]
         
+        UINavigationBar.appearance().backgroundColor = StyleKit.darkGrey
         
         //        YLProgressBar.appearance().type = .Flat
         //        YLProgressBar.appearance().tintColor = colorPurple

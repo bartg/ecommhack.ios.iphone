@@ -13,7 +13,7 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
     dynamic var product:Product?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ga_title = "Products"
+        self.title = "Recommendation"
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
@@ -39,8 +39,8 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationItem.setHidesBackButton(false, animated: true)
         
         PayPalMobile.preconnectWithEnvironment(PayPalEnvironmentNoNetwork)
         

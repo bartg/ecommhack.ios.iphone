@@ -10,6 +10,12 @@
         }
     }
     
+    @IBInspectable public var darker:Bool = false {
+        didSet {
+            self.styleIt()
+        }
+    }
+    
     override public func awakeFromNib() {
         super.awakeFromNib()
         self.styleIt()
@@ -22,6 +28,6 @@
     
     final func styleIt() {
         self.font = UI.fontSized(self.fontSize, bold: self.fontBold)
-        self.textColor = StyleKit.gray1
+        self.textColor = self.darker ? StyleKit.darkGrey : StyleKit.lighGrey
     }
 }
