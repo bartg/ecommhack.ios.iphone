@@ -2,6 +2,7 @@ class Product: Model {
     dynamic var name = ""
     dynamic var desc = ""
     dynamic var brand = ""
+    dynamic var productId = ""
     dynamic var price = NSDecimalNumber(string: "0")
     var priceString = "" {
         didSet {

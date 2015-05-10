@@ -118,6 +118,14 @@ class API:NSObject {
         }
     }
     
+    func buyProduct(product:Product, success:()->(), failure:()->()) {
+        self.manager.HTTPClient.postPath("orders/", parameters: ["product": product.productId], success: { (operation, result) -> Void in
+            
+        }) { (operation, error) -> Void in
+            
+        }
+    }
+    
     func handleError(error:NSError, operation:AFHTTPRequestOperation? = nil) {
         if operation?.response?.statusCode == 401 {
             self.delegate?.apiRespondedWithError(.Unauthenticated)
