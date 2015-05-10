@@ -16,12 +16,7 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
         self.title = "Recommendation"
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        
-        self.api.getProduct({ (product) -> () in
-            self.product = product
-        }, failure: { () -> () in
-            
-        })
+        self.downloadProductContinously()
         
         self.userHelloLabel.text = "Hi \(self.api.user.name)!"
         if let image = self.api.user.avatar {
@@ -35,6 +30,20 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
                 self?.topDescLabel.text = "\(product.price) €"
                 self?.collectionView.reloadData()
             }
+        }
+    }
+    
+    func downloadProductContinously() {
+        
+        self.api.getProduct({ (product) -> () in
+            self.product = product
+            }, failure: { () -> () in
+                
+        })
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(3 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) { () -> Void in
+            self.downloadProductContinously()
         }
     }
     
