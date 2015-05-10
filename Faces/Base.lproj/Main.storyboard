@@ -72,10 +72,10 @@
                                     <action selector="logOutTapped:" destination="zwP-gh-kcz" eventType="touchUpInside" id="j3u-NU-H1Q"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cRY-YX-WPy">
-                                <rect key="frame" x="0.0" y="141" width="320" height="173"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cRY-YX-WPy">
+                                <rect key="frame" x="0.0" y="95" width="320" height="193"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AoK-OS-K9B">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="AoK-OS-K9B">
                                     <size key="itemSize" width="320" height="176"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -97,7 +97,7 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="NmA-NW-efF" firstAttribute="top" secondItem="qxu-QM-eso" secondAttribute="topMargin" constant="8" id="W1f-Gy-0R9"/>
+                                            <constraint firstItem="NmA-NW-efF" firstAttribute="top" secondItem="qxu-QM-eso" secondAttribute="topMargin" constant="8" id="4S7-D5-Qsj"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="NmA-NW-efF" secondAttribute="bottom" constant="8" id="obw-5v-lj1"/>
                                             <constraint firstItem="NmA-NW-efF" firstAttribute="leading" secondItem="qxu-QM-eso" secondAttribute="leading" constant="30" id="sZ9-pX-hSI"/>
                                             <constraint firstAttribute="trailing" secondItem="NmA-NW-efF" secondAttribute="trailing" constant="30" id="wKq-lu-YNQ"/>
@@ -150,12 +150,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you need sunglasses?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42l-fK-3Mw" customClass="NormalLabel" customModule="FacesUI">
-                                <rect key="frame" x="30" y="111" width="260" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYl-cA-pfe" customClass="LightButton" customModule="FacesUI">
                                 <rect key="frame" x="85" y="390" width="150" height="60"/>
                                 <constraints>
@@ -169,8 +163,8 @@
                                     <action selector="buyNowTapped:" destination="zwP-gh-kcz" eventType="touchUpInside" id="6UW-OS-2tM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yf-5k-nEn" customClass="NormalLabel" customModule="FacesUI">
-                                <rect key="frame" x="8" y="321" width="304" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yf-5k-nEn" customClass="NormalLabel" customModule="FacesUI">
+                                <rect key="frame" x="8" y="296" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -180,8 +174,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFJ-hu-mjy" customClass="NormalLabel" customModule="FacesUI">
-                                <rect key="frame" x="24" y="360" width="272" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFJ-hu-mjy" customClass="NormalLabel" customModule="FacesUI">
+                                <rect key="frame" x="24" y="325" width="272" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -199,14 +193,28 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darker" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42l-fK-3Mw" customClass="LinkLabel" customModule="FacesUI">
+                                <rect key="frame" x="30" y="353" width="260" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fontBold" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bjg-5H-Lnf" secondAttribute="trailing" id="0fc-5O-g0c"/>
                             <constraint firstItem="KWy-7j-lKi" firstAttribute="top" secondItem="L4b-lN-Y8j" secondAttribute="top" id="6vt-07-943"/>
+                            <constraint firstItem="cRY-YX-WPy" firstAttribute="top" secondItem="bjg-5H-Lnf" secondAttribute="bottom" id="93J-Ox-8kO"/>
                             <constraint firstAttribute="centerX" secondItem="eYl-cA-pfe" secondAttribute="centerX" id="99O-QB-m6J"/>
                             <constraint firstItem="UFJ-hu-mjy" firstAttribute="leading" secondItem="L4b-lN-Y8j" secondAttribute="leadingMargin" constant="8" id="9aN-8h-dnM"/>
+                            <constraint firstItem="42l-fK-3Mw" firstAttribute="top" secondItem="UFJ-hu-mjy" secondAttribute="bottom" constant="8" id="9oj-lY-ATI"/>
                             <constraint firstItem="tVt-bg-eME" firstAttribute="leading" secondItem="L4b-lN-Y8j" secondAttribute="leadingMargin" constant="8" id="C97-Tf-aNs"/>
                             <constraint firstItem="bjg-5H-Lnf" firstAttribute="leading" secondItem="L4b-lN-Y8j" secondAttribute="leading" id="DUt-sb-hvT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tVt-bg-eME" secondAttribute="trailing" id="Ecg-0L-i3D"/>
@@ -222,7 +230,7 @@
                             <constraint firstItem="cRY-YX-WPy" firstAttribute="leading" secondItem="L4b-lN-Y8j" secondAttribute="leading" id="QZz-dN-ZDa"/>
                             <constraint firstItem="1yf-5k-nEn" firstAttribute="top" secondItem="cRY-YX-WPy" secondAttribute="bottom" constant="8" id="Qhc-FU-HGy"/>
                             <constraint firstItem="PbP-MI-TQ3" firstAttribute="top" secondItem="eYl-cA-pfe" secondAttribute="bottom" constant="30" id="SRJ-ci-008"/>
-                            <constraint firstItem="42l-fK-3Mw" firstAttribute="top" secondItem="bjg-5H-Lnf" secondAttribute="bottom" constant="16" id="U22-Hq-3F2"/>
+                            <constraint firstItem="eYl-cA-pfe" firstAttribute="top" secondItem="42l-fK-3Mw" secondAttribute="bottom" constant="8" id="ajy-80-nRf"/>
                             <constraint firstAttribute="trailing" secondItem="cRY-YX-WPy" secondAttribute="trailing" id="c21-7K-GW5"/>
                             <constraint firstItem="tVt-bg-eME" firstAttribute="leading" secondItem="L4b-lN-Y8j" secondAttribute="leadingMargin" constant="4" id="hbs-zq-L1b"/>
                             <constraint firstItem="eYl-cA-pfe" firstAttribute="top" secondItem="UFJ-hu-mjy" secondAttribute="bottom" constant="30" id="hcT-7P-eMX"/>
@@ -232,6 +240,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="OuI-jv-8JZ"/>
+                                <exclude reference="hcT-7P-eMX"/>
                                 <exclude reference="C97-Tf-aNs"/>
                                 <exclude reference="Ecg-0L-i3D"/>
                                 <exclude reference="NiO-ZD-D02"/>

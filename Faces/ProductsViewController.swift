@@ -32,6 +32,7 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
             if let product = self?.product {
                 self?.descLabel.text = product.brand
                 self?.nameLabel.text = product.name
+                self?.topDescLabel.text = "\(product.price) €"
                 self?.collectionView.reloadData()
             }
         }
@@ -40,7 +41,7 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationItem.setHidesBackButton(false, animated: true)
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
         PayPalMobile.preconnectWithEnvironment(PayPalEnvironmentNoNetwork)
         
