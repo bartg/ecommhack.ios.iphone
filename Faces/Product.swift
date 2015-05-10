@@ -2,7 +2,7 @@ class Product: Model {
     dynamic var name = ""
     dynamic var desc = ""
     dynamic var brand = ""
-    dynamic var productId = ""
+    dynamic var productId = 0
     dynamic var price = NSDecimalNumber(string: "0")
     var priceString = "" {
         didSet {
@@ -23,7 +23,8 @@ class Product: Model {
             "name": "name",
             "desc": "desc",
             "price": "priceString",
-            "brand": "brand"
+            "brand": "brand",
+            "id": "productId",
             ])
         mapping.addPropertyMapping(RKRelationshipMapping(fromKeyPath: "images", toKeyPath: "images", withMapping: Image.mapping()))
         return mapping

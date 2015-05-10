@@ -115,6 +115,7 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
         return conf
     }()
     
+    var productToBuy:Product?
     func payWithPayPal(amount:NSDecimalNumber, name:String) {
         let payment = PayPalPayment()
         payment.amount = amount
@@ -126,6 +127,7 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
             // this payment would not be processable. You would want to handle that here.
         }
         
+        self.productToBuy = self.product
         let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.paypalConfiguration, delegate: self)
         self.presentViewController(paymentViewController, animated: true, completion: nil)
     }
@@ -137,8 +139,14 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
     
     func payPalPaymentViewController(paymentViewController: PayPalPaymentViewController!, didCompletePayment completedPayment: PayPalPayment!) {
         DLOG("\(completedPayment)")
-        
         paymentViewController.dismissViewControllerAnimated(true, completion: nil)
+        
+        SVProgressHUD.showWithMaskType(.Black)
+        self.api.buyProduct(self.productToBuy!, success: { () -> () in
+            SVProgressHUD.dismiss()
+        }) { () -> () in
+            SVProgressHUD.dismiss()
+        }
     }
     
 }

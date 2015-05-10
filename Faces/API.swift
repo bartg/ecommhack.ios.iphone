@@ -119,10 +119,16 @@ class API:NSObject {
     }
     
     func buyProduct(product:Product, success:()->(), failure:()->()) {
-        self.manager.HTTPClient.postPath("orders/", parameters: ["product": product.productId], success: { (operation, result) -> Void in
-            
+        self.manager.HTTPClient.postPath("orders/", parameters: ["product": product.productId, "user": self.user.userId], success: { (operation, result) -> Void in
+            let dict = result as! NSDictionary
+            let orderId = dict["id"] as! Int
+            self.manager.HTTPClient.postPath("orders/\(orderId)/complete", parameters: [:], success: { (operation, result) -> Void in
+                success()
+                }, failure: { (operation, error) -> Void in
+                    failure()
+                })
         }) { (operation, error) -> Void in
-            
+            failure()
         }
     }
     
