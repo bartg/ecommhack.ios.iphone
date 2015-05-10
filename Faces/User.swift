@@ -2,7 +2,7 @@ import UIKit
 
 class User: Model {
     var accessToken = ""
-    var userId = ""
+    var userId = 0
     var name = ""
     var email = ""
     var avatarURL = ""
@@ -28,6 +28,7 @@ class User: Model {
             "name": "name",
             "email": "email",
             "avatar": "avatarURL",
+            "id": "userId"
             ])
         return mapping
     }

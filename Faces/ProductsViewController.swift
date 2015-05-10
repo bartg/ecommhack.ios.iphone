@@ -28,15 +28,12 @@ class ProductsViewController: FacesViewController, UICollectionViewDataSource, U
             self.userImageView.sd_setImageWithURL(image)
         }
         
-        RACObserve(self, "product").subscribeNextAs { [weak self](desc:String) -> () in
+        RACObserve(self, "product").subscribeNextAs { [weak self](product:Product) -> () in
             if let product = self?.product {
-                self?.descLabel.text = product.description
+                self?.descLabel.text = product.brand
                 self?.nameLabel.text = product.name
+                self?.collectionView.reloadData()
             }
-        }
-        
-        RACObserve(self.product, "images").subscribeNextAs { [weak self](desc:String) -> () in
-            self?.collectionView.reloadData()
         }
     }
     

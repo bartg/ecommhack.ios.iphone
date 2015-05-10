@@ -1,5 +1,5 @@
-let API_URL = "http://localhost:8082/"
-//let API_URL = "http://faces.hern.as/"
+//let API_URL = "http://localhost:8082/"
+let API_URL = "http://faces.hern.as/"
 
 let hostPollingLatency:NSTimeInterval = 1
 let influencerPollingLatency:NSTimeInterval = 1

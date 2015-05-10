@@ -76,11 +76,12 @@ class API:NSObject {
         }
     }
     func getProduct(success:(product:Product)->(), failure:()->()) {
-        self.manager.getObjectsAtPath("products/recommendation/", parameters: [:], success: { (operation, result) -> Void in
+        self.manager.getObjectsAtPath("products/recommendation/", parameters: ["user_id":self.user.userId], success: { (operation, result) -> Void in
             if let product = result.firstObject as? Product {
-                self.downloadAllImages(product.images, callback: {
-                    success(product: product)
-                })
+//                self.downloadAllImages(product.images, callback: {
+//                    success(product: product)
+//                })
+                success(product: product)
             }
             
             }) { (operation, error) -> Void in
